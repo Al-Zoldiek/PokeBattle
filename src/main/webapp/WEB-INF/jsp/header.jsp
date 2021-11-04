@@ -2,7 +2,10 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/PokeBattle/">Home</a>
+				<a href="/PokeBattle/">Accueil</a>
+			</li>
+			<li>
+				<a href="create-ability">Page de création de la capacité</a>
 			</li>
 		</ul>
 	</nav>

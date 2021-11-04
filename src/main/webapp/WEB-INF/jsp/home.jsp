@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>PokeBattle home</title>
+<title>Accueil PokeBattle</title>
 </head>
 <body>
 	<c:import url="header.jsp">
-		<c:param name="title" value="Welcome on PokeBattle" />
+		<c:param name="title" value="Bienvenue sur PokeBattle" />
 	</c:import>
 	
 	
