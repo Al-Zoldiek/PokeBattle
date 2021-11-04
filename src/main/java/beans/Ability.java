@@ -8,6 +8,10 @@ public class Ability {
 	
 	
 	
+	public Ability() {
+		super();
+	}
+
 	public Ability(String name, int power, String elemType) {
 		super();
 		this.name = name;
