@@ -5,7 +5,10 @@
 				<a href="/PokeBattle/">Accueil</a>
 			</li>
 			<li>
-				<a href="create-ability">Page de création de la capacité</a>
+				<a href="create-ability">Creer une capacité</a>
+			</li>
+			<li>
+				<a href="">Creer un pokemon</a>
 			</li>
 		</ul>
 	</nav>
