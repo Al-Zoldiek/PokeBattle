@@ -13,9 +13,9 @@ public class Pokemon {
 	
 	private static double STRONG_VS = 1.5;
 	private static double WEAK_VS = 0.5;
-	private static String WATER_TYPE = "Eau";
-	private static String FIRE_TYPE = "Feu";
-	private static String PLANT_TYPE = "Plante";
+	public static String WATER_TYPE = "Eau";
+	public static String FIRE_TYPE = "Feu";
+	public static String PLANT_TYPE = "Plante";
 	
 	
  	public Pokemon() {

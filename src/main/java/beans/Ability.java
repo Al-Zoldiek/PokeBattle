@@ -2,6 +2,7 @@ package beans;
 
 public class Ability {
 
+	private int id;
 	private String name;
 	private int power;
 	private String elemType;
@@ -19,10 +20,27 @@ public class Ability {
 		this.elemType = elemType;
 	}
 	
+	public Ability(int id, String name, int power, String elemType) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.power = power;
+		this.elemType = elemType;
+	}
+	
 	@Override
 	public String toString() {
 		return "Capacity [name=" + name + ", power=" + power + ", elemType=" + elemType + "]";
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
