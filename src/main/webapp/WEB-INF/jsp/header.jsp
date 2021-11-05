@@ -8,7 +8,7 @@
 				<a href="create-ability">Creer une capacité</a>
 			</li>
 			<li>
-				<a href="">Creer un pokemon</a>
+				<a href="create-pokemon">Creer un pokemon</a>
 			</li>
 		</ul>
 	</nav>

@@ -11,18 +11,31 @@
 		<c:param name="title" value="Creez une capacité" />
 	</c:import>
 	
+	<div>
 		<form method ="post" action="create-ability">
 			<p>
 				<label> Nom de la capacité :</label>
-				<input type="text" id="abilityName" name="abilityName" placeholder="entrez un texte">
+				<input type="text" id="ability-name" name="ability-name" placeholder="entrez un texte" required>
 			</p>
 			<p>
 				<label> Puissance de la capacité :</label>
-				<input type="numeric" id="abilityPower" name="abilityPower" placeholder="entrez un nombre">
+				<input type="number" id="ability-power" name="ability-power" placeholder="entrez un nombre" required>
+			</p>
+			<p>Type de la capacité</p>
+			<p>
+				<label for="water">Eau</label> 
+				<input type="radio" name="elem-type" value="water"  id="water" required > 
+				
+				<label for="fire">Feu</label>
+				<input type="radio" name="elem-type" value="fire" id="fire" required >
+				 
+				<label for="plant">Plante</label> 
+				<input type="radio" name="elem-type" value="plant" id="plant" required >
 			</p>
 			<p>
-			<button type="submit"/>Creer la capacité
+			<button type="submit">Creer la capacité</button>
 			</p>
 		</form>
+	</div>
 </body>
 </html>

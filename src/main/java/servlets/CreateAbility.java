@@ -32,8 +32,8 @@ public class CreateAbility extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println(request.getParameter("abilityName"));
-		System.out.println(request.getParameter("abilityPower"));
+		System.out.println(request.getParameter("ability-name"));
+		System.out.println(request.getParameter("ability-power"));
 
 		doGet(request, response);
 	}
