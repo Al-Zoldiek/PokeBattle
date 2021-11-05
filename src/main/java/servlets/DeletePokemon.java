@@ -42,8 +42,7 @@ public class DeletePokemon extends HttpServlet {
 		
         PokemonService pokemonService = new PokemonServiceImpl();
 		
-        int pokemonIdToDelete = Integer.valueOf(request.getParameter("pets"));
-        
+        int pokemonIdToDelete = Integer.valueOf(request.getParameter("idPokemonToDelete"));
 		pokemonService.delete(pokemonIdToDelete);
 		
 		response.sendRedirect("pokedex");

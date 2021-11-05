@@ -71,24 +71,17 @@
 								<td><c:out value="${pokemon.getAbilty().getElemType()}"/></td>
 							</c:otherwise>
 						</c:choose>
+						
+						<td>
+							<form method="POST" action="pokemon-delete">
+								<input type="hidden" name="idPokemonToDelete" value="${pokemon.getId()}" />
+								<button type="submit" class="app-button--critical app-button--into-table">Supprimer</button>
+							</form>
+						</td>
 			        </tr>	
 				</c:forEach>
 			</tbody>
 		</table>
-		<h2>Supprimer un pokemon :</h2>
-		<div>
-			<form method="post" action="pokemon-delete">
-				<select name="pets" id="pet-select">
-					<option value="">-- Choisis un pokemon à supprimer --</option>
-					<c:forEach items="${allPokemons}" var="pokemon">
-						<option value="${pokemon.getId()}">
-							<c:out value="${pokemon.getName()}"/>
-							</option>
-					</c:forEach>
-	    		</select>
-	    		<button type="submit">Valider</button>
-			</form>
-		</div>
 	</main>
 </body>
 </html>
