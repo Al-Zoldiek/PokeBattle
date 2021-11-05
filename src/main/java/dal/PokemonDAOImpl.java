@@ -43,13 +43,14 @@ public class PokemonDAOImpl implements PokemonDAO {
 						resultSet.getString("elem_type")
 						);
 				Pokemon pokemon = new Pokemon(
-					resultSet.getString("pkmn_name"),
-					resultSet.getInt("lifepoints"),
-					resultSet.getInt("attack"),
-					resultSet.getInt("defense"),
-					resultSet.getInt("speed"),
-					resultSet.getString("elem_type"),
-					ability
+						resultSet.getInt("id"),
+						resultSet.getString("pkmn_name"),
+						resultSet.getInt("lifepoints"),
+						resultSet.getInt("attack"),
+						resultSet.getInt("defense"),
+						resultSet.getInt("speed"),
+						resultSet.getString("elem_type"),
+						ability
 				);
 				pokemonList.add(pokemon);
 			}
@@ -107,5 +108,32 @@ public class PokemonDAOImpl implements PokemonDAO {
 			e.printStackTrace();
 		}
 		return pokemon;
+	}
+	
+	public String delete(int pokemonIdToDelete) {
+		System.out.println("[PokemonDAOImpl delete]");
+		
+		// Etape 1 : Connexion a la BDD
+		Connection connection = DAOUtils.getConnection();
+		
+		// Etape 2 : Preparation de notre requete
+		String request = "DELETE FROM pokemon WHERE id = ?";
+		
+		try {
+			// Etape 3 : Executer la requete
+			// Preparation
+			PreparedStatement prepareStmt = connection.prepareStatement(request);
+			prepareStmt.setInt(1, pokemonIdToDelete);
+			
+			// ExÃ©cuter la requete
+			prepareStmt.executeUpdate();
+			
+			// Etape 4 : Fermeture de la connexion à la BDD
+			connection.close();
+			return "La suppression du pokemon s'est bien passée";
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return "La suppression du pokemon ne s'est pas bien passée";
+		}
 	}
 }

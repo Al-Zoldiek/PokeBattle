@@ -43,11 +43,13 @@
 	</div>
 	<h2>Supprimer un pokemon :</h2>
 	<div>
-		<form method="" action="">
+		<form method="post" action="pokemon-delete">
 			<select name="pets" id="pet-select">
 				<option value="">-- Choisis un pokemon à supprimer --</option>
 				<c:forEach items="${allPokemons}" var="pokemon">
-					<option value="${pokemon.getName()}"><c:out value="${pokemon.getName()}"/></option>
+					<option value="${pokemon.getId()}">
+						<c:out value="${pokemon.getName()}"/>
+						</option>
 				</c:forEach>
     		</select>
     		<button type="submit">Valider</button>
