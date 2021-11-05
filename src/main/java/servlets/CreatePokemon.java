@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class CreatePokemon
  */
-@WebServlet("/create-pokemeon")
+@WebServlet("/create-pokemon")
 public class CreatePokemon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -34,8 +34,12 @@ public class CreatePokemon extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println(request.getParameter("pkmn-name"));
+		System.out.println(request.getParameter("attack"));
+		System.out.println(request.getParameter("defense"));
+		System.out.println(request.getParameter("speed"));
+		System.out.println(request.getParameter("elem-type"));
+//		doGet(request, response);
 	}
 
 }
