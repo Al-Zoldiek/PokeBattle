@@ -48,7 +48,6 @@ public class BattlePage extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Trouver un moyen de réhydrater la page avec notre premier choix
 		
 		PokemonService pokemonService = new PokemonServiceImpl();
 		HttpSession session = request.getSession();
@@ -66,6 +65,8 @@ public class BattlePage extends HttpServlet {
 		
 			request.setAttribute("pokemonList", pokemonListRedone);
 			session.setAttribute("stepTester", "is-first-selected");
+			
+			// TODO Stocker le premier pokemon dans la session
 			
 			doGet(request, response);
 		}else if(stepTester.equalsIgnoreCase("is-first-selected")){
