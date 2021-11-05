@@ -21,7 +21,7 @@
 				<label> Puissance de la capacité :</label>
 				<input type="number" id="ability-power" name="ability-power" placeholder="entrez un nombre" required>
 			</p>
-			<p>Type de la capacité</p>
+			<p>Type de la capacité : </p>
 			<p>
 				<label for="water">Eau</label> 
 				<input type="radio" name="elem-type" value="water"  id="water" required > 
