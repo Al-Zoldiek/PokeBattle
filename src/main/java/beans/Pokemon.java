@@ -126,6 +126,10 @@ public class Pokemon {
 		return "Pokemon [name=" + name + ", lifepoints=" + lifepoints + ", attack=" + attack + ", defense=" + defense
 				+ ", speed=" + speed + ", elemType=" + elemType + ", ability=" + ability.toString() + "]";
 	}
+	
+	public String displayForListing() {
+		return this.name + ", pokemon de type " + this.getElemType();
+	}
 
 	// This method initializes a fight between 2 Pokemon objects
 	public static String fight(Pokemon attacker, Pokemon defender) {

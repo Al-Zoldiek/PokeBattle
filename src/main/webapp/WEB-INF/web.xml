@@ -6,4 +6,14 @@
       <include-prelude>/WEB-INF/jsp/taglibs.jsp</include-prelude>
     </jsp-property-group>
   </jsp-config>
+  <servlet>
+    <description></description>
+    <display-name>BattlePage</display-name>
+    <servlet-name>BattlePage</servlet-name>
+    <servlet-class>servlets.BattlePage</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BattlePage</servlet-name>
+    <url-pattern>/BattlePage</url-pattern>
+  </servlet-mapping>
 </web-app>
