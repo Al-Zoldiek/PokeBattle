@@ -41,14 +41,14 @@
 				
 				<p>Choix du type du pokemon :</p>
 				<p>
-					<label for="water">Eau</label> 
-					<input type="radio" name="elem-type" value="water"  id="water" required> 
+					<label for="eau">Eau</label> 
+					<input type="radio" name="elem-type" value="eau"  id="eau" required> 
 					
-					<label for="fire">Feu</label>
-					<input type="radio" name="elem-type" value="fire" id="fire" required>
+					<label for="feu">Feu</label>
+					<input type="radio" name="elem-type" value="feu" id="feu" required>
 					 
-					<label for="plant">Plante</label> 
-					<input type="radio" name="elem-type" value="plant" id="plant" required>
+					<label for="plante">Plante</label> 
+					<input type="radio" name="elem-type" value="plante" id="plante" required>
 				</p>
 				
 				<p>Capacité (attention, celle-ci doit etre du même type que le pokemon)</p>

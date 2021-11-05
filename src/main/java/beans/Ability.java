@@ -2,7 +2,7 @@ package beans;
 
 public class Ability {
 
-	private int id;
+	public int id;
 	private String name;
 	private int power;
 	private String elemType;

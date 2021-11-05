@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import beans.Ability;
+import beans.Pokemon;
 import forms.CreatePkmnForm;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -56,6 +57,7 @@ public class CreatePokemon extends HttpServlet {
 		
 		CreatePkmnForm createPkmnForm = new CreatePkmnForm();
 		createPkmnForm.setPkmnName(request.getParameter("pkmn-name"));
+		createPkmnForm.setLifepoints(Integer.valueOf(request.getParameter("lifepoints")));
 		createPkmnForm.setAttack(Integer.valueOf(request.getParameter("attack")));
 		createPkmnForm.setDefense(Integer.valueOf(request.getParameter("defense")));
 		createPkmnForm.setSpeed(Integer.valueOf(request.getParameter("speed")));
@@ -71,14 +73,28 @@ public class CreatePokemon extends HttpServlet {
 		// recuperation de la valeur du ElemType (eau, feu ou plante) dans une variable 
 		String elemType = request.getParameter("elem-type");
 		
+		System.out.println(abilityElemType + "<- abilityElemType");
+		System.out.println(elemType + "<- elemType");
+		
 		//Condition de création du pokémon : le ElemType choisi doit correspondre 
 		//au elemType de la capacité choisie pour pouvoir creer le pokemon
-		if(elemType == abilityElemType) {
+		if(elemType.equalsIgnoreCase(abilityElemType)) {
 			
 		// creaction du pokemon en base de donnée	
 		createPkmnForm.setAbility(ability);
 		PokemonService pokemonService = new PokemonServiceImpl();
+<<<<<<< HEAD
 		pokemonService.create(createPkmnForm.addNewPkmn());
+=======
+		pokemonService.create(
+				new Pokemon(createPkmnForm.getPkmnName(),
+						createPkmnForm.getLifepoints(),
+						createPkmnForm.getAttack(),
+						createPkmnForm.getDefense(),
+						createPkmnForm.getSpeed(),
+						createPkmnForm.getElemType(),
+						createPkmnForm.getAbility()));
+>>>>>>> develop
 		
 		//redirection vers le pokedex
 		response.sendRedirect("pokedex");
