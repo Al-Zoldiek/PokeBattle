@@ -2,7 +2,7 @@ package beans;
 
 public class Pokemon {
 
-	
+	private int id;
 	private String name;
 	private int lifepoints;
 	private int attack;
@@ -21,9 +21,21 @@ public class Pokemon {
  	public Pokemon() {
 		super();
 	}
-
-	public Pokemon(String name, int lifepoints, int attack, int defense, int speed, String elemType) {
+ 	
+	public Pokemon(String name, int lifepoints, int attack, int defense, int speed, String elemType, Ability ability) {
 		super();
+		this.name = name;
+		this.lifepoints = lifepoints;
+		this.attack = attack;
+		this.defense = defense;
+		this.speed = speed;
+		this.elemType = elemType;
+		this.ability = ability;
+	}
+
+	public Pokemon(int id, String name, int lifepoints, int attack, int defense, int speed, String elemType) {
+		super();
+		this.id = id;
 		this.name = name;
 		this.lifepoints = lifepoints;
 		this.attack = attack;
@@ -32,8 +44,9 @@ public class Pokemon {
 		this.elemType = elemType;
 	}
 
-	public Pokemon(String name, int lifepoints, int attack, int defense, int speed, String elemType, Ability ability) {
+	public Pokemon(int id, String name, int lifepoints, int attack, int defense, int speed, String elemType, Ability ability) {
 		super();
+		this.id = id;
 		this.name = name;
 		this.lifepoints = lifepoints;
 		this.attack = attack;
@@ -99,6 +112,15 @@ public class Pokemon {
 		this.ability = ability;
 	}
 		
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 		return "Pokemon [name=" + name + ", lifepoints=" + lifepoints + ", attack=" + attack + ", defense=" + defense
