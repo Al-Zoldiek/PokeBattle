@@ -13,7 +13,9 @@
 	<c:import url="header.jsp">
 		<c:param name="title" value="Bienvenue sur PokeBattle" />
 	</c:import>
+	<main>
 	
+	</main>
 	
 </body>
 </html>
