@@ -165,7 +165,9 @@ public class PokemonDAOImpl implements PokemonDAO {
         String query = QUERY_INSERT + POKEMON_TABLE
         				+ QUERY_PARAM_7
         				+ QUERY_VALUES_7;
-
+        	System.out.println(query);
+        	System.out.println(pokemonProvided.getAbilty().toString());
+        	System.out.println(pokemonProvided.getAbilty().id);
         try {
             // Préparation de l'envoi de requête
             PreparedStatement pprdStatement = connection.prepareStatement(query);
@@ -176,8 +178,8 @@ public class PokemonDAOImpl implements PokemonDAO {
             pprdStatement.setInt(4, pokemonProvided.getDefense());
             pprdStatement.setInt(5, pokemonProvided.getSpeed());
             pprdStatement.setString(6, pokemonProvided.getElemType());
-            pprdStatement.setInt(7, pokemonProvided.getAbilty().getId());
-
+            pprdStatement.setInt(7, pokemonProvided.getAbilty().id);
+            System.out.println(pprdStatement.toString() + "<- pprdStat toString()");
             pprdStatement.executeUpdate();
             return "L'insert en base de donnees a ete effectuee";
         } catch (SQLException sqlException) {

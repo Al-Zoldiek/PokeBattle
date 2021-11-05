@@ -3,6 +3,7 @@ package servlets;
 import java.io.IOException;
 
 import beans.Ability;
+import beans.Pokemon;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -35,6 +36,10 @@ public class PokemonTest extends HttpServlet {
 		
 		AbilityService abilityService = new AbilityServiceImpl();
 		PokemonService pokemonService = new PokemonServiceImpl();
+		
+		Ability newAbility = new Ability(1, "lanceflamme", 5, "Feu");
+		Pokemon newPkmn = new Pokemon("Rondoudou", 200, 50, 50, 40, "Eau" ,newAbility);
+		pokemonService.create(newPkmn);
 		
 		this.getServletContext().getRequestDispatcher(RouteUtils.ROUTE_POKEMON_TEST).forward(request, response);
 	}
