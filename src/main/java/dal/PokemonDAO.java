@@ -11,5 +11,7 @@ public interface PokemonDAO {
 	public Pokemon findByName(String nameToFind);
 	
 	public String delete(int pokemonIdToDelete);
+	
+	public String create(Pokemon pokemonProvided);
 
 }
