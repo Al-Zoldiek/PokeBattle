@@ -6,7 +6,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+	<c:import url="header.jsp">
+		<c:param name="title" value="Bienvenue sur PokeBattle" />
+	</c:import>
 	<c:if test="${ !sessionScope.stepTester.equals(\"is-second-selected\") }">
 	<div>
 		<c:if test="${ sessionScope.stepTester == null}"> 

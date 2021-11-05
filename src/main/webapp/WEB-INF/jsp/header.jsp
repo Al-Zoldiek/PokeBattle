@@ -11,6 +11,7 @@
 			<a href="create-ability">Creer une capacité</a>
 			<a href="create-pokemon">Creer un pokemon</a>
 			<a href="pokedex">Pokedex</a>
+			<a href="battle-page">Battle page</a>
 		</div>
 		
 	</nav>
