@@ -9,6 +9,6 @@ public class RouteUtils {
 	public static final String ROUTE_POKEDEX = "/WEB-INF/jsp/pokedex.jsp";
 	public static final String ROUTE_POKEMON_TEST = "/WEB-INF/jsp/pokemon-test.jsp";
 	public static final String ROUTE_POKEMON_DELETE = "/WEB-INF/jsp/pokemon-delete.jsp";
-
+	public static final String ROUTE_BATTLE_PAGE = "/WEB-INF/jsp/battle-page.jsp";
 
 }

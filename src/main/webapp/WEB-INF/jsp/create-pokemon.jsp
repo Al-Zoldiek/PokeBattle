@@ -3,8 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Creation pokemon</title>
+	<meta charset="UTF-8">
+	<title>Creation pokemon</title>
+	<style>
+		<%@ include file="../ressources/styles/global.css" %>
+	</style>
 </head>
 <body>
 	<c:import url="header.jsp">
