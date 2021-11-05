@@ -28,6 +28,13 @@ public class PokemonServiceImpl implements PokemonService {
 		PokemonDAO pokemonDAO = new PokemonDAOImpl();
 		return pokemonDAO.delete(pokemonIdToDelete);
 	}
+
+	@Override
+	public String create(Pokemon pokemonProvided) {
+		System.out.print("[PokemonServiceImpl create(Pokemon pokemonProvided) ");
+		PokemonDAO pokemonDAO = new PokemonDAOImpl();
+		return pokemonDAO.create(pokemonProvided);
+	}
 	
 	
 }

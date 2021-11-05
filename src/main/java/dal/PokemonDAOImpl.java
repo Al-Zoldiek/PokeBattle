@@ -13,6 +13,25 @@ import beans.Pokemon;
 
 public class PokemonDAOImpl implements PokemonDAO {
 
+	private static String POKEMON_TABLE = "pokemon";
+	private static String POKEMON_TABLE_INNER_JOIN_ABILITES = "pokemon p INNER JOIN abilities a ON p.ability_id = a.id";
+    private static String POKEMON_COL_ID = "id";
+    private static String POKEMON_COL_NAME = "pkmn_name";
+    private static String POKEMON_COL_LIFEPOINTS = "lifepoints";
+    private static String POKEMON_COL_ATTACK = "attack";
+    private static String POKEMON_COL_DEFENSE = "defense";
+    private static String POKEMON_COL_SPEED = "speed";
+    private static String POKEMON_COL_ELEM = "elem_type";
+    private static String POKEMON_COL_ABILITY = "ability_id";
+    private static String QUERY_SELECT_ALL = "SELECT * FROM ";
+    private static String QUERY_DELETE = "DELETE FROM ";
+    private static String QUERY_INSERT = "INSERT INTO ";
+    private static String QUERY_UPDATE = "UPDATE ";
+    private static String QUERY_WHERE_ID = " WHERE id = ?";
+    private static String QUERY_PARAM_7 = " (pkmn_name, lifepoints, attack, defense, speed, elem_type, ability_id)";
+    private static String QUERY_VALUES_7 = " VALUES (?,?,?,?,?,?,?)";
+    private static String QUERY_UPDATE_PARAM = " SET pkmn_name=?, lifepoints=?, attack=?, defense=?, speed=?, elem_type=?, ability_id=?";
+    
 	@Override
 	public List<Pokemon> findAll() {
 		System.out.println("> PokemonDAOImpl findAll]");
@@ -135,5 +154,35 @@ public class PokemonDAOImpl implements PokemonDAO {
 			e.printStackTrace();
 			return "La suppression du pokemon ne s'est pas bien pass�e";
 		}
+	}
+
+	@Override
+	public String create(Pokemon pokemonProvided) {
+		// Création de la connexion
+        Connection connection = DAOUtils.getConnection();
+
+        // Préparation de requête
+        String query = QUERY_INSERT + POKEMON_TABLE
+        				+ QUERY_PARAM_7
+        				+ QUERY_VALUES_7;
+
+        try {
+            // Préparation de l'envoi de requête
+            PreparedStatement pprdStatement = connection.prepareStatement(query);
+
+            pprdStatement.setString(1, pokemonProvided.getName());
+            pprdStatement.setInt(2, pokemonProvided.getLifepoints());
+            pprdStatement.setInt(3, pokemonProvided.getAttack());
+            pprdStatement.setInt(4, pokemonProvided.getDefense());
+            pprdStatement.setInt(5, pokemonProvided.getSpeed());
+            pprdStatement.setString(6, pokemonProvided.getElemType());
+            pprdStatement.setInt(7, pokemonProvided.getAbilty().getId());
+
+            pprdStatement.executeUpdate();
+            return "L'insert en base de donnees a ete effectuee";
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+            return "L'insert en base de donnees n'a pas ete effectuee";
+        }
 	}
 }
