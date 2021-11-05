@@ -27,7 +27,8 @@ public class Home extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		// 
+request.getSession().removeAttribute("stepTester");
 		this.getServletContext().getRequestDispatcher(RouteUtils.ROUTE_HOME).forward(request, response);
 	}
 

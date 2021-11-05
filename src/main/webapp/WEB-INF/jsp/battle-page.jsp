@@ -50,10 +50,13 @@
 	    </c:if>
 	    
 	    <c:if test="${ sessionScope.stepTester.equals(\"is-second-selected\") }">
-		
+		<p>Hell</p>
 		<c:out value="${ sessionScope }"></c:out>
 		
-		<div></div>
+		<div>
+		
+		
+		</div>
 			
 	    </c:if>
     </main>

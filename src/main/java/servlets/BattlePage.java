@@ -53,7 +53,7 @@ public class BattlePage extends HttpServlet {
 		HttpSession session = request.getSession();
 		List<Pokemon> pokemonList = new ArrayList<Pokemon>();
 		
-		System.out.println(request.getParameter("pokemons"));
+		System.out.println(request.getParameter("pokemons") + "<- query getParam select pokemons");
 		System.out.println(request.getParameter("step-test"));
 		
 		
@@ -65,13 +65,19 @@ public class BattlePage extends HttpServlet {
 		
 			request.setAttribute("pokemonList", pokemonListRedone);
 			session.setAttribute("stepTester", "is-first-selected");
+			session.setAttribute("firstPokemon", pokemonService.findById(Integer.valueOf(request.getParameter("pokemons"))));
+			System.out.println(session.getAttribute("firstPokemon") + "<- firstPokemon");
+			System.out.println(pokemonService.findById(Integer.valueOf(request.getParameter("pokemons"))));
 			
 			// TODO Stocker le premier pokemon dans la session
 			
 			doGet(request, response);
 		}else if(stepTester.equalsIgnoreCase("is-first-selected")){
 			session.setAttribute("stepTester", "is-second-selected");
+			session.setAttribute("secondPokemon", pokemonService.findById(Integer.valueOf(request.getParameter("pokemons"))));
+			System.out.println(session.getAttribute("secondPokemon"));
 			doGet(request, response);
+			
 		}
 	}
 

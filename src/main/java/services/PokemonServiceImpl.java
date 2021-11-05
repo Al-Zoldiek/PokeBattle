@@ -19,7 +19,7 @@ public class PokemonServiceImpl implements PokemonService {
 	public Pokemon findByName(String nameToFind) {
 		System.out.print("[PokemonServiceImpl findByName(String nameToFind) ");
 		PokemonDAO pokemonDAO = new PokemonDAOImpl();
-		return pokemonDAO.findByName(nameToFind);
+		return pokemonDAO.findById(nameToFind);
 	}
 
 	@Override
@@ -34,6 +34,12 @@ public class PokemonServiceImpl implements PokemonService {
 		System.out.print("[PokemonServiceImpl create(Pokemon pokemonProvided) ");
 		PokemonDAO pokemonDAO = new PokemonDAOImpl();
 		return pokemonDAO.create(pokemonProvided);
+	}
+
+	@Override
+	public Pokemon findById(int idProvided) {
+		PokemonDAO pokemonDAO = new PokemonDAOImpl();
+		return pokemonDAO.findById(idProvided);
 	}
 	
 	

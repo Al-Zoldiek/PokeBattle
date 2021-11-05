@@ -84,8 +84,8 @@ public class PokemonDAOImpl implements PokemonDAO {
 	}
 
 	@Override
-	public Pokemon findByName(String nameToFind) {
-		System.out.println("> PokemonDAOImpl findByName > " + nameToFind + "]");
+	public Pokemon findById(int providedId) {
+		System.out.println("> PokemonDAOImpl findByName > " + providedId + "]");
 
 		Pokemon pokemon = null;
 		
@@ -93,12 +93,12 @@ public class PokemonDAOImpl implements PokemonDAO {
 		Connection connection = DAOUtils.getConnection();
 		
 		// Requête
-		String request = "SELECT * FROM pokemon p INNER JOIN abilities a ON p.ability_id = a.id WHERE pkmn_name = ?";
+		String request = "SELECT * FROM pokemon p INNER JOIN abilities a ON p.ability_id = a.id WHERE a.id = ?";
 		
 		try {
 			// Préparation de la requête
 			PreparedStatement prepareStmt = connection.prepareStatement(request);
-			prepareStmt.setString(1, nameToFind);
+			prepareStmt.setInt(1, providedId);
 			// Exécutution la requete
 			ResultSet resultSet = prepareStmt.executeQuery();
 			
@@ -110,6 +110,7 @@ public class PokemonDAOImpl implements PokemonDAO {
 						resultSet.getString("elem_type")
 						);
 				pokemon = new Pokemon(
+					resultSet.getInt("id"),
 					resultSet.getString("pkmn_name"),
 					resultSet.getInt("lifepoints"),
 					resultSet.getInt("attack"),
@@ -186,5 +187,11 @@ public class PokemonDAOImpl implements PokemonDAO {
             sqlException.printStackTrace();
             return "L'insert en base de donnees n'a pas ete effectuee";
         }
+	}
+
+	@Override
+	public Pokemon findById(String nameToFind) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

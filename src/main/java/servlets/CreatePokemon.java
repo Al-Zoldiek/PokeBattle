@@ -83,9 +83,7 @@ public class CreatePokemon extends HttpServlet {
 		// creaction du pokemon en base de donnée	
 		createPkmnForm.setAbility(ability);
 		PokemonService pokemonService = new PokemonServiceImpl();
-<<<<<<< HEAD
-		pokemonService.create(createPkmnForm.addNewPkmn());
-=======
+
 		pokemonService.create(
 				new Pokemon(createPkmnForm.getPkmnName(),
 						createPkmnForm.getLifepoints(),
@@ -94,7 +92,7 @@ public class CreatePokemon extends HttpServlet {
 						createPkmnForm.getSpeed(),
 						createPkmnForm.getElemType(),
 						createPkmnForm.getAbility()));
->>>>>>> develop
+
 		
 		//redirection vers le pokedex
 		response.sendRedirect("pokedex");
